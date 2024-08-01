@@ -25,7 +25,11 @@ function createObjects(count, createFunc) {
  */
 function createLevel() {
   const chickens = createObjects(30, () => new Chicken());
+  const chicks = createObjects(30, () => new Chick());
   const clouds = createObjects(30, () => new Cloud());
+
+  let enemies = [...chickens, ...chicks];
+  enemies.push(new Endboss());
 
   const backgroundObjects = [];
   const positions = [
@@ -66,12 +70,12 @@ function createLevel() {
     );
   });
 
-  // Hinzufügen des Endbosses zum Chicken-Array
-  chickens.push(new Endboss());
-
-  return new Level(chickens, clouds, backgroundObjects);
+  return new Level(enemies, clouds, backgroundObjects);
 }
 
+/**
+ * Soll erst beim Starten des Spieles gesetzt werden.
+ */
 function initLevel() {
   level1 = createLevel();
 }

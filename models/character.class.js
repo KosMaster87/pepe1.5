@@ -1,10 +1,10 @@
 "use strict";
 
 class Character extends MovableObject {
-  height = 150;
-  width = 85;
+  height = 170;
+  width = 95;
   x = 0;
-  y = 280;
+  y = 270;
   speed = 5;
   world;
   walking_sound = new Audio("./audio/walkingCharacter.mp3");

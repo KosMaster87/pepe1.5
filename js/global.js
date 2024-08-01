@@ -19,8 +19,3 @@ function clearAllIntervals() {
   intervalIds.forEach(clearInterval);
   intervalIds = [];
 }
-
-// Test
-let id = setStoppableInterval(() => {
-  console.log("Intervale laufen");
-}, 1000);
