@@ -26,16 +26,44 @@ function createObjects(count, createFunc) {
 function createLevel() {
   const chickens = createObjects(30, () => new Chicken());
   const clouds = createObjects(30, () => new Cloud());
-  
+
   const backgroundObjects = [];
-  const positions = [-719, 0, 719, 719 * 2, 719 * 3, 719 * 4, 719 * 5, 719 * 6, 719 * 7, 719 * 8];
-  
+  const positions = [
+    -719,
+    0,
+    719,
+    719 * 2,
+    719 * 3,
+    719 * 4,
+    719 * 5,
+    719 * 6,
+    719 * 7,
+    719 * 8,
+  ];
+
   positions.forEach((pos, index) => {
     const layerNumber = (index % 2) + 1;
-    backgroundObjects.push(new BackgroundObject("./img/5_background/layers/air.png", pos));
-    backgroundObjects.push(new BackgroundObject(`./img/5_background/layers/3_third_layer/${layerNumber}.png`, pos));
-    backgroundObjects.push(new BackgroundObject(`./img/5_background/layers/2_second_layer/${layerNumber}.png`, pos));
-    backgroundObjects.push(new BackgroundObject(`./img/5_background/layers/1_first_layer/${layerNumber}.png`, pos));
+    backgroundObjects.push(
+      new BackgroundObject("./img/5_background/layers/air.png", pos)
+    );
+    backgroundObjects.push(
+      new BackgroundObject(
+        `./img/5_background/layers/3_third_layer/${layerNumber}.png`,
+        pos
+      )
+    );
+    backgroundObjects.push(
+      new BackgroundObject(
+        `./img/5_background/layers/2_second_layer/${layerNumber}.png`,
+        pos
+      )
+    );
+    backgroundObjects.push(
+      new BackgroundObject(
+        `./img/5_background/layers/1_first_layer/${layerNumber}.png`,
+        pos
+      )
+    );
   });
 
   // Hinzufügen des Endbosses zum Chicken-Array
@@ -44,8 +72,12 @@ function createLevel() {
   return new Level(chickens, clouds, backgroundObjects);
 }
 
-const level1 = createLevel();
-
+function initLevel() {
+  level1 = createLevel();
+}
+// function initLevel() {
+//   const level1 = createLevel();
+// }
 
 // const level1 = new Level(
 //   [

@@ -1,5 +1,7 @@
 "use strict";
 
+// import { instructionPopUp } from "../tamplate/instructionPopUp/instructionPopUp.js";
+
 function resetGlobals() {
   isGameRunning = false;
   world = null;
@@ -20,6 +22,9 @@ function startGame() {
     .classList.add("instructionPopUpSelf_inGame");
   isGameRunning = true;
   checkWidth();
+
+  // let ImportTest = document.getElementById("mainLayerAsRelative");
+  // ImportTest.appendChild = instructionPopUp;
 }
 
 function restart() {
